@@ -1,0 +1,20 @@
+.card {
+  background-color: white;
+  box-shadow: 0 0 4px rgba(black, .25);
+  padding: 2rem;
+  figure {
+    margin: 0;
+  }
+}
+
+.card__options {
+  display: flex;
+  margin-top: 2rem;
+  button {
+    flex: 1;
+    height: 40px;
+  }
+  button:first-child {
+    margin-right: 1rem;
+  }
+}

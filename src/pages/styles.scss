@@ -1,0 +1,35 @@
+.cardsList {
+  padding: 2rem 0;
+  & > * {
+    margin-bottom: 2rem;
+  }
+}
+@media all and (min-width: 768px) {
+  .cardsList {
+    display: flex;
+    flex-wrap: wrap;
+    & > * {
+      flex: 1 calc(50% - 2rem);
+      margin-right: 2rem;
+      max-width: 50%;
+    }
+    & > *:nth-child(even) {
+      margin-right: 0;
+    }
+  }
+}
+
+@media all and (min-width: 1200px) {
+  .cardsList {
+    & > * {
+      flex: 1 calc(33.3% - 2rem);
+      max-width: 33.3%;
+    }
+    & > *:nth-child(even) {
+      margin-right: 2rem;
+    }
+    & > *:nth-child(3n) {
+      margin-right: 0;
+    }
+  }
+}
