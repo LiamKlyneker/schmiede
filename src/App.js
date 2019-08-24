@@ -1,11 +1,11 @@
 import React from 'react';
 // import logo from './logo.svg';
-import './App.css';
+// import './App.css';
 import { Provider as ReduxProvider } from "react-redux";
 import configureStore from "./modules/makeStore";
 
-import Home from '../src/pages/Home.js';
-
+import Header from '#components/Header';
+import Home from '#pages/Home';
 
 const reduxStore = configureStore(window.REDUX_INITIAL_DATA);
 
@@ -13,9 +13,7 @@ function App() {
   return (
     <ReduxProvider store={reduxStore}>
       <div className="App">
-        <header className="App-header">
-          {/* The Header */}
-        </header>
+        <Header />
         <Home />
       </div>
     </ReduxProvider>

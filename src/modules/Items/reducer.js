@@ -2,6 +2,7 @@ const defaultState = {
   isFetching: true,
   items: [],
   rentedOnes: [],
+  filterInput: '',
 };
 
 const itemsReducer = (state = defaultState, action) => {
@@ -57,6 +58,22 @@ const itemsReducer = (state = defaultState, action) => {
           ...state.items.slice(itemToReturnIndex + 1),
         ],
       };
+
+    case 'ADD_ITEM_SUCCESS':
+      return {
+        ...state,
+        items: [
+          { ...action.payload.data },
+          ...state.items,
+        ],
+      };
+
+    case 'SET_FILTER_INPUT':
+      return {
+        ...state,
+        filterInput: action.payload.value,
+      };
+
     default:
       return state;
   }
