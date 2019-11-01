@@ -67,3 +67,30 @@ export const returnItem = (id) => dispatch => {
   });
 }
 
+export const addItem = (payload) => dispatch => {
+  const request = axios({
+    method: 'POST',
+    url: 'https://jsonplaceholder.typicode.com/photos',
+    data: payload,
+  })
+  request.then((response) => {
+    dispatch(getRequestSuccess('ADD_ITEM', response));
+    return response;
+  })
+  .catch((err) => {
+    dispatch(getRequestError('ADD_ITEM', err))
+    return err;
+  })
+  
+  return {
+    type: 'ADD_ITEM',
+    payload: request,
+  };
+}
+
+export const setFilterInput = (value) => dispatch => {
+  dispatch({
+    type: 'SET_FILTER_INPUT',
+    payload: { value },
+  });
+}
